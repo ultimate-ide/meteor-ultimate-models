@@ -7,7 +7,14 @@ Package.describe({
 
 Package.on_use(function (api, where) {
   api.versionsFrom("METEOR@0.9.1");
-  api.use(["underscore"]);
+  api.use([
+		"underscore",
+    'templating',
+    'blaze',
+		'aldeed:simple-schema',
+		'aldeed:autoform',
+		'forwarder:autoform-wizard'
+	]);
 
   api.add_files([
     'lib/inheritance.js',
@@ -23,5 +30,17 @@ Package.on_use(function (api, where) {
 		
 		'lib/base_model.js',
   ], ['client', 'server']);
-  api.export && api.export(['Base', 'Model'], ['client', 'server']);
+	
+	api.add_files([
+		'lib/ultimate_sync.js'
+	], ['server']);
+	
+	api.add_files([
+		'lib/forms.html',
+		'lib/helpers.js'
+	], ['client']);
+	
+	
+  api.export && api.export(['Base', 'Model', 'BaseHTTP'], ['client', 'server']);
+	api.export && api.export(['UltimateSync'], ['server']);
 });

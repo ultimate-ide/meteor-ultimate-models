@@ -64,5 +64,5 @@ Package.on_use(function (api, where) {
 		'lib/modal/ultimate_prompt.js'
 	], 'client');
 
-	api.export(['wizardsById', 'wiz', 'ModalContent', 'ModalWizard', 'ModalTabbed', 'UltimatePrompt'], ['client']);
+	api.export(['wizardsById', 'wiz'], ['client']);
 });

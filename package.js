@@ -12,8 +12,7 @@ Package.on_use(function (api, where) {
     'templating',
     'blaze',
 		'aldeed:simple-schema',
-		'aldeed:autoform',
-		'forwarder:autoform-wizard'
+		'aldeed:autoform'
 	]);
 
   api.add_files([
@@ -34,13 +33,36 @@ Package.on_use(function (api, where) {
 	api.add_files([
 		'lib/ultimate_sync.js'
 	], ['server']);
-	
-	api.add_files([
-		'lib/forms.html',
-		'lib/helpers.js'
-	], ['client']);
+
 	
 	
   api.export && api.export(['Base', 'Model', 'BaseHTTP'], ['client', 'server']);
 	api.export && api.export(['UltimateSync'], ['server']);
+	
+	
+	/** UI TOOLS **/
+	api.use([
+	  'tracker',
+	  'session',
+		'naxio:flash'
+	], 'client');
+
+	api.use('aldeed:autoform@3.0.0 || 4.0.0', 'client');
+
+	api.addFiles([
+	  'lib/wizard.html',
+	  'lib/wizard.js',
+		'lib/templates.js',
+	
+		'lib/modal/modal.js',
+		'lib/modal/modal_content.js',
+		'lib/modal/modal_wizard.js',
+		'lib/modal/modal_tabbed.js',
+		'lib/modal/modal_form.js',
+		'lib/modal/model_prompt.js',
+		'lib/modal/schema_prompt.js',
+		'lib/modal/ultimate_prompt.js'
+	], 'client');
+
+	api.export(['wizardsById', 'wiz', 'ModalContent', 'ModalWizard', 'ModalTabbed', 'UltimatePrompt'], ['client']);
 });

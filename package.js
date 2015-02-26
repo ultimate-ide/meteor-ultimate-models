@@ -1,6 +1,6 @@
 Package.describe({
   summary: "MVC-like models in Meteor & A Lot More",
-  version: "0.0.1",
+  version: "0.0.2",
   git: "https://github.com/ultimate-ide/meteor-ultimate-models.git",
   name: "ultimateide:ultimate-models"
 });

@@ -28,6 +28,13 @@ Order.modelExtends(UltimateModel, 'orders', { //'Orders' collection will be crea
 });
 ```
 
+For ease, you can also create a model just like this (and `UltimateModel` will be used as the parent class):
+```
+Order.modelExtends('orders', { //'Orders' collection will be created as an object in the global scope
+	getPrice: function() {}
+});
+```
+
 ### API
 Explore it. Start with `lib/model/ultimate_model.js` since most of you will start with the goal of a better implementation for models generated from `collection._transform`. But there's a lot A LOT more, which we'll soon document.
 

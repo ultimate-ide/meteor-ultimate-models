@@ -10,7 +10,7 @@ Meteor is cool. Mongo is awesome. But Models in MVC frameworks are great at code
 
 ### How to install?
 ```sh
-meteor add 'ultimateide:ultimate-models'
+meteor add ultimateide:ultimate-models
 ```
 
 ## How to use?

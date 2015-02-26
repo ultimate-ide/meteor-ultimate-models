@@ -1,0 +1,96 @@
+<template name="modal_popup">
+	<div id="{{id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+       
+            {{#if header}}
+							<div class="modal-header">
+								{{> Template.dynamic template=header data=headerData}}
+							</div>
+						{{else}}
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									{{#if title}}<h4 class="modal-title" id="myModalLabel">{{title}}</h4>{{/if}}
+	            </div>
+						{{/if}}
+						
+            <div class="modal-body">
+                {{#if subtitle}}<h4>{{subtitle}}</h4>{{/if}}
+                {{#if description}}<p>{{description}}</p>{{/if}}
+
+								{{#if formData}}
+									{{>ultimate_form formData}}
+								{{/if}}
+								
+								{{#if currentTemplate}}
+									{{>Template.dynamic template=currentTemplate data=currentContext}}
+								{{/if}}
+            </div>
+						
+						
+            {{#if footer}}
+	            <div class="modal-footer">
+	                {{> Template.dynamic template=footer data=footerData}}
+	            </div>
+						{{else}}
+	            <div class="modal-footer">
+	                {{#if cancelText}}
+										<button type="button" class="btn btn-default" data-dismiss="modal">{{cancelText}}</button>
+									{{/if}}
+								
+	                {{#if submitText}}
+										<button type="button" class="btn btn-primary modalSubmit">{{submitText}}</button>
+									{{/if}}
+	            </div>
+						{{/if}}
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+	</div>
+</template>
+
+
+<template name="modal_wizard">
+	<div id="{{id}}" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		
+    <div class="modal-dialog">
+        <div class="modal-content">
+					
+		      <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							{{#if title}}<h4 class="modal-title" id="myModalLabel">{{title}}</h4>{{/if}}
+		      </div>
+					
+					<div class="modal-body">
+						{{>ultimate_wizard wizardData}}
+					</div>
+            
+        </div><!-- /.modal-content -->	
+    </div><!-- /.modal-dialog -->
+	</div>
+</template>
+
+
+<template name="modal_tabbed_header">
+	<ul class="tab-bar">
+		{{#each tabs}}
+			<li class="{{../selected index}}">
+				<img src="{{icon}}" width="{{width}}" />
+				<a href="#" class="general_icon">{{title}}</a>
+			</li>
+		{{/each}}
+	</ul>
+</template>
+
+
+<template name="modal_tabbed_footer">
+	<button type="button" class="btn btn-primary modalSubmit">{{submitText}}</button>
+</template>
+
+<template name="empty_modal_content">
+	You Forgot to provide a template mofo
+</template>
+

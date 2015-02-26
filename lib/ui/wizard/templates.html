@@ -1,0 +1,90 @@
+<template name="ultimate_wizard">
+  {{#with innerContext ..}}
+  <div id="{{wizard.id}}" class="wizard">
+    {{> Template.dynamic template=stepsTemplate}}
+	
+		<div>
+			{{#if step.form}}
+		
+				{{#if activeStepTemplate}}
+					{{#ultimate_form id=step.form model=model validation='blur'}}
+						{{#with formContext ..}}
+							{{> Template.dynamic template=activeStepTemplate data=this}}
+						{{/with}}
+					{{/ultimate_form}}
+				{{else}}
+					{{>ultimate_form id=step.form model=model validation='blur'}}
+				{{/if}}
+			
+			{{else}}
+		
+				{{#with innerStepContext ..}}
+					{{> Template.dynamic template=activeStepTemplate}}
+				{{/with}}	
+			
+			{{/if}}
+			
+			{{> Template.dynamic template=backNextTemplate data=this}}
+		</div>
+		
+  </div>
+  {{/with}}
+</template>
+
+
+
+<template name="ultimate_wizard_steps">
+	<ul class="wizard-navigation nav-justified">
+		{{#each wizard.steps}}
+			<li>
+				{{#if wizard.route}}
+					<a class="{{stepClass id}}" href="{{pathFor wizard.route step=id}}">
+						<strong> {{title}} </strong>
+					</a>
+				{{else}}
+					<a class="{{stepClass id}} step-link" href="#">
+						<strong> {{title}} </strong>
+					</a>
+				{{/if}}
+			</li>
+		{{/each}}
+	</ul>
+
+  <div id="bar" class="progress progress-small">
+    <div class="progress-bar progress-bar-inverse" style="width:{{wizard.activeStep.barPercent}}%"></div>
+  </div>
+</template>
+
+
+<template name="ultimate_wizard_back_next">
+  <div class="description ml mr mt-n-md">
+    <ul class="wizard" style="margin-top: 60px;">
+			
+			{{#if showPrevious}}
+	      <li class="previous">
+	        <a class="btn btn-primary pull-left wizard-button" href="#">
+						<i class="fa fa-caret-left"></i> Previous
+					</a>
+	      </li>
+			{{/if}}
+      
+			{{#if showNext}}
+	      <li class="next">
+	        <a class="btn btn-primary pull-right wizard-button" href="#">Next 
+						<i class="fa fa-caret-right"></i>
+					</a>
+	      </li>
+			{{/if}}
+			
+			{{#if showFinish}}
+				<li class="finish">
+		    	<a class="btn btn-success pull-right wizard-button" href="#">Finish 
+						<i class="fa fa-check"></i>
+					</a>
+		    </li>
+			{{/if}}
+			
+			<div style="clear:both;"></div>
+    </ul>
+  </div>
+</template>

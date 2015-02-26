@@ -1,0 +1,101 @@
+<template name="ultimate_form">
+	{{flash}}
+	
+	{{#if Template.contentBlock}}
+	
+		{{#autoForm newData}}
+			{{> Template.contentBlock this}}
+		{{/autoForm}}
+		
+	{{else}}
+
+		{{#autoForm newData}}
+		
+			{{#each afFieldNames}}
+				{{#with fullContext}}
+					{{> Template.dynamic template=inputTemplate data=this}}
+				{{/with}}
+			{{/each}}
+			
+			{{#unless ../../noSubmit}}
+				{{>auto_submit value='Save' style='width: 208px;'}}
+			{{/unless}}
+				
+		{{/autoForm}}
+		
+	{{/if}}
+</template>
+
+
+<template name="form_group">
+	<div class="form-group {{#if afFieldIsInvalid name=name}} has-error{{/if}}">
+    <label for="{{name}}" class="control-label col-md-3">{{afFieldLabelText name=name}}</label>
+    <div class="col-md-8">
+      {{#unless addon}}
+	      <div class="col-md-10">
+	        {{> afFieldInput this}}
+					
+
+					{{#if afFieldIsInvalid name=name}}
+						<span class="help-block pull-left" style="color:red;">{{{afFieldMessage name=name}}}</span>
+					{{else}}
+						{{#if help}}
+							<span class="help-block pull-left" >{{help}}</span>
+						{{/if}}
+					{{/if}}
+
+					
+	      </div>
+			{{else}}
+        <div class="col-md-10 input-group" style="margin-left:15px;">
+					
+          <div class="form-inline input-group">
+            {{> afFieldInput this}}
+            <div class="input-group-addon" style="width:0px;">{{addon}}</div>
+          </div>
+
+					{{#if afFieldIsInvalid name=name}}
+						<span class="help-block pull-left" style="color:red;">{{{afFieldMessage name=name}}}</span>
+					{{else}}
+						{{#if help}}
+							<span class="help-block pull-left" >{{help}}</span>
+						{{/if}}
+					{{/if}}
+
+        </div>
+			{{/unless}}
+    </div>
+  </div>
+</template>
+
+<template name="cc_exp_group">
+  <div class="form-group">
+    <label for="expiration-date" class="control-label col-md-3">Expiration Date</label>
+    <div class="col-md-8">
+      <div class="col-md-10">
+        {{> afFieldInput monthData}}
+        {{> afFieldInput yearData}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="read_only_form_group">
+  <div class="form-group">
+    <label for="subdomain" class="col-sm-4 control-label">{{label}}{{label2}}</label>
+    <div class="col-sm-7">
+      <input type="text" id="normal-field" class="form-control input-transparent" disabled="disabled" value="{{value}}{{value2}}">
+    </div>
+  </div>
+</template>
+
+<template name="auto_submit">
+  <div class="form-group">
+    <label class="control-label col-md-3"></label>
+    <div class="col-md-6">
+      <div class="col-md-10">
+        <input class="form-control btn btn-success col-md" value="{{value}}" type="submit" tabindex="5" style="{{style}}" />
+      </div>
+    </div>
+  </div>
+</template>

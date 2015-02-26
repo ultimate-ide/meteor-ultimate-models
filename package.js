@@ -1,7 +1,7 @@
 Package.describe({
   summary: "MVC-like models in Meteor & A Lot More",
   version: "0.0.1",
-  git: "https://github.com/ultimate-ide/ultimate-models.git",
+  git: "https://github.com/ultimate-ide/meteor-ultimate-models.git",
   name: "ultimateide:ultimate-models"
 });
 
@@ -12,8 +12,8 @@ Package.on_use(function (api, where) {
     'templating',
     'blaze',
 		'http',
-		'aldeed:simple-schema',
-		'aldeed:autoform'
+		'aldeed:simple-schema@1.3.0',
+		'aldeed:autoform@4.2.2'
 	]);
 
 
@@ -51,7 +51,7 @@ Package.on_use(function (api, where) {
 	/** ULTIMATE_FORM & ULTIMATE_MODEL **/
 	
 	api.use([
-		'smeevil:session-store'
+		'smeevil:session-store@1.0.0'
 	]);
 	
 	api.add_files([
@@ -91,7 +91,7 @@ Package.on_use(function (api, where) {
 	api.use([
 	  'tracker',
 	  'session',
-		'naxio:flash'
+		'naxio:flash@0.2.2'
 	], 'client');
 
 

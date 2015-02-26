@@ -15,21 +15,21 @@ meteor add ultimateide:ultimate-models
 
 ## How to use?
 ```
-Stripe = function Order() {};
+StripeCharge = function StripeCharge() {};
 
-Stripe.extends(UltimateClass, {
-	charge: function() {}
+StripeCharge.extends(UltimateClass, {
+	create: function() {}
 });
 
 Order = function Order() {};
 
-Order.modelExtends(UltimateModel, 'orders', { //'Orders' collection will be created an object in the global scope
+Order.modelExtends(UltimateModel, 'orders', { //'Orders' collection will be created as an object in the global scope
 	getPrice: function() {}
 });
 ```
 
 ### API
-Explore it. Start with `lib/model/ultimate_model.js` since most of you will start with the goal of a better implementation for models generated from `collection._transform`. 
+Explore it. Start with `lib/model/ultimate_model.js` since most of you will start with the goal of a better implementation for models generated from `collection._transform`. But there's a lot A LOT more, which we'll soon document.
 
 Ok, let me give you some examples (VERY OUTDATED!):  
 

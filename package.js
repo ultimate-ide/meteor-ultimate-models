@@ -51,6 +51,7 @@ Package.on_use(function (api, where) {
 	/** ULTIMATE_FORM & ULTIMATE_MODEL **/
 	
 	api.use([
+		'matb33:collection-hooks@0.7.9',
 		'smeevil:session-store@1.0.0'
 	]);
 	
@@ -116,6 +117,9 @@ Package.on_use(function (api, where) {
 		'lib/ui/wizard/templates.html',
 	  'lib/ui/wizard/templates.js',
 
+
+		'lib/ui/events/helpers.js',
+		'lib/ui/events/ultimate_events.js',
 	], 'client');
 
 	api.export([ 

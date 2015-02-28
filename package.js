@@ -119,7 +119,7 @@ Package.on_use(function (api, where) {
 
 
 		'lib/ui/events/helpers.js',
-		'lib/ui/events/ultimate_events.js',
+		'lib/ui/events/ultimate_events≠.js',
 	], 'client');
 
 	api.export([ 

@@ -13,7 +13,8 @@ Package.on_use(function (api, where) {
     'blaze',
 		'http',
 		'aldeed:simple-schema@1.3.0',
-		'aldeed:autoform@4.2.2'
+		'aldeed:autoform@4.2.2',
+		'reactive-dict'
 	]);
 
 
@@ -43,7 +44,7 @@ Package.on_use(function (api, where) {
 		
   ], ['client', 'server']);
 
-  api.export(['UltimateClass'], ['client', 'server']);
+  api.export(['Ultimate', 'UltimateClass'], ['client', 'server']);
 	
 	
 	
@@ -57,6 +58,7 @@ Package.on_use(function (api, where) {
 	
 	api.add_files([
 		'lib/form/ultimate_form.js',
+		'lib/form/form_extends.js',
 
 		'lib/model/ultimate_model.js',
 		'lib/model/additional_methods.js',
@@ -118,8 +120,14 @@ Package.on_use(function (api, where) {
 	  'lib/ui/wizard/templates.js',
 
 
-		'lib/ui/events/helpers.js',
-		'lib/ui/events/ultimate_events≠.js',
+		'lib/ui/ultimate_template/helpers/selected.js',
+		'lib/ui/ultimate_template/ultimate_events/ultimate_events.js',
+		'lib/ui/ultimate_template/ultimate_template.js',
+		'lib/ui/ultimate_template/instance_methods.js',
+		'lib/ui/ultimate_template/instance_data.js',
+		'lib/ui/ultimate_template/autorun_subscribe.js',
+		'lib/ui/ultimate_template/get_set_methods.js',
+		
 	], 'client');
 
 	api.export([ 

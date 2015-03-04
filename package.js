@@ -58,11 +58,12 @@ Package.on_use(function (api, where) {
 	
 	api.add_files([
 		'lib/form/ultimate_form.js',
+		'lib/form/mongo_attributes.js',
+		'lib/form/reactive_methods.js',
 		'lib/form/form_extends.js',
 
 		'lib/model/ultimate_model.js',
 		'lib/model/additional_methods.js',
-		'lib/model/reactive_methods.js',
 		'lib/model/model_extends.js',
 
   ], ['client', 'server']);

@@ -121,17 +121,18 @@ Package.on_use(function (api, where) {
 	  'lib/ui/wizard/templates.js',
 
 
-		'lib/ui/ultimate_template/helpers/selected.js',
-		'lib/ui/ultimate_template/ultimate_events/ultimate_events.js',
-		'lib/ui/ultimate_template/ultimate_template.js',
-		'lib/ui/ultimate_template/instance_methods.js',
-		'lib/ui/ultimate_template/instance_data.js',
-		'lib/ui/ultimate_template/autorun_subscribe.js',
-		'lib/ui/ultimate_template/get_set_methods.js',
-		'lib/ui/ultimate_template/mixins.js',
+		'lib/ui/ultimate_component/ultimate_events/ultimate_events.js',
+		'lib/ui/ultimate_component/ultimate_component.js',
+		'lib/ui/ultimate_component/instance_methods.js',
+		'lib/ui/ultimate_component/instance_data.js',
+		'lib/ui/ultimate_component/autorun_subscribe.js',
+		'lib/ui/ultimate_component/get_set_methods.js',
+		'lib/ui/ultimate_component/mixins.js',
 		
-		'lib/ui/ultimate_template/render.html',
-		'lib/ui/ultimate_template/render.js',
+		'lib/ui/ultimate_component/helpers/selected.js',
+		'lib/ui/ultimate_component/helpers/render.html',
+		'lib/ui/ultimate_component/helpers/render.js',
+
 		
 	], 'client');
 

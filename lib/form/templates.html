@@ -73,8 +73,13 @@
     <label for="expiration-date" class="control-label col-md-3">Expiration Date</label>
     <div class="col-md-8">
       <div class="col-md-10">
-        {{> afFieldInput monthData}}
-        {{> afFieldInput yearData}}
+				<span class="{{#if afFieldIsInvalid name=month}} has-error{{/if}}">
+        	{{> afFieldInput monthData}}
+				</span>
+				
+				<span class="{{#if afFieldIsInvalid name=year}} has-error{{/if}}">
+        	{{> afFieldInput yearData}}
+				</span>
       </div>
     </div>
   </div>

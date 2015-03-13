@@ -128,6 +128,10 @@ Package.on_use(function (api, where) {
 		'lib/ui/ultimate_template/instance_data.js',
 		'lib/ui/ultimate_template/autorun_subscribe.js',
 		'lib/ui/ultimate_template/get_set_methods.js',
+		'lib/ui/ultimate_template/mixins.js',
+		
+		'lib/ui/ultimate_template/render.html',
+		'lib/ui/ultimate_template/render.js',
 		
 	], 'client');
 

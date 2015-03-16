@@ -83,6 +83,7 @@ Package.on_use(function (api, where) {
 	
 	api.add_files([
 		'lib/utilities/ultimate_sync.js',
+		'lib/utilities/ultimate_email.js',
 	], ['server']);
 
 	api.export(['UltimateSync'], ['server']);

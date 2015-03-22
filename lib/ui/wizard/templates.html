@@ -49,7 +49,27 @@
 			</li>
 		{{/each}}
 	</ul>
-
+	
+	
+	<ul class="wizard-navigation nav-justified nav nav-pills">
+		{{#each wizard.steps}}
+			<li class="{{stepClass}}">
+				{{#if wizard.route}}
+					<a href="{{pathFor wizard.route step=id}}" data-toggle="tab" aria-expanded="{{expanded}}">
+						<small>{{num}}.</small>
+						<strong> {{title}}</strong>
+					</a>
+				{{else}}
+					<a href="#" data-toggle="tab" aria-expanded="{{expanded}}">
+						<small>{{num}}.</small>
+						<strong> {{title}}</strong>
+					</a>
+				{{/if}}
+			</li>
+		{{/each}}
+	</ul>
+	
+	
   <div id="bar" class="progress progress-small">
     <div class="progress-bar progress-bar-inverse" style="width:{{wizard.activeStep.barPercent}}%"></div>
   </div>

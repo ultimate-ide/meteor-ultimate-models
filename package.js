@@ -18,6 +18,12 @@ Package.on_use(function (api, where) {
 	]);
 
 
+
+	api.add_files([
+		'lib/utilities/ultimate_clone.js'
+	], ['client', 'server']);
+	
+	
   api.add_files([
     'lib/core/extend/__extend/setup.js',
 		'lib/core/extend/__extend/setup_hook.js',
@@ -48,27 +54,42 @@ Package.on_use(function (api, where) {
 	
 	
 	
+	Npm.depends({
+		"remote-exec": "~0.0.3"
+	});
+	
+	api.add_files([
+		'lib/utilities/ultimate_exec.js'
+	], 'server']);
+	
+	
+	api.add_files([
+		'lib/utilities/ultimate_startup.js',
+		'lib/utilities/ultimate_config.js'
+	], ['client', 'server']);
+	
 	
 	/** ULTIMATE_FORM & ULTIMATE_MODEL **/
 	
 	api.use([
 		'matb33:collection-hooks@0.7.9',
-		'smeevil:session-store@1.0.0'
+		'smeevil:session-store@1.0.0',
+		'alanning:roles@1.2.12'
 	]);
 	
 	api.add_files([
 		'lib/form/ultimate_form.js',
 		'lib/form/mongo_attributes.js',
 		'lib/form/reactive_methods.js',
-		'lib/form/form_extends.js',
 
 		'lib/model/ultimate_model.js',
 		'lib/model/additional_methods.js',
-		'lib/model/model_extends.js',
+		
+		'lib/user/ultimate_user.js',
 
   ], ['client', 'server']);
 
-	api.export(['UltimateForm', 'UltimateModel'], ['client', 'server']);
+	api.export(['UltimateForm', 'UltimateModel', 'UltimateUser'], ['client', 'server']);
 
 
 	api.add_files([

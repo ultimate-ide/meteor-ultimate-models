@@ -8,7 +8,7 @@ Package.describe({
 Package.on_use(function (api, where) {
   api.versionsFrom('METEOR@1.0');
   api.use([
-		"underscore",
+		"underscore@1.8.2",
     'templating',
     'blaze',
 		'http',
@@ -74,7 +74,9 @@ Package.on_use(function (api, where) {
 	api.use([
 		'matb33:collection-hooks@0.7.9',
 		'smeevil:session-store@1.0.0',
-		'alanning:roles@1.2.12'
+		'alanning:roles@1.2.12',
+		'meteorhacks:aggregate@1.2.1',
+		'meteorhacks:subs-manager@1.3.0'
 	]);
 	
 	api.add_files([

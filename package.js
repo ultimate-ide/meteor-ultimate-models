@@ -119,7 +119,9 @@ Package.on_use(function (api, where) {
 	api.use([
 	  'tracker',
 	  'session',
-		'naxio:flash@0.2.2'
+		'naxio:flash@0.2.2',
+		'percolate:velocityjs@1.2.1_1',
+		'aldeed:template-extension@3.4.3'
 	], 'client');
 
 

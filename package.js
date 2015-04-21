@@ -8,7 +8,7 @@ Package.describe({
 Package.on_use(function (api, where) {
   api.versionsFrom('METEOR@1.0');
   api.use([
-		"underscore@1.8.2",
+		"underscore",
     'templating',
     'blaze',
 		'http',
@@ -24,9 +24,22 @@ Package.on_use(function (api, where) {
 	], ['client', 'server']);
 	
 	
+	
+	api.add_files([
+		'lib/overrides/string_methods.js',
+		'lib/overrides/array_methods.js',
+		'lib/overrides/underscore_mixin.js',
+		'lib/overrides/meteor_overrides.js',
+		'lib/overrides/quickies.js'
+	], ['client', 'server']);
+	
+	
+	/** INHERITANCE & ULTIMATECLASS CORE **/
+	
   api.add_files([
     'lib/core/extend/__extend/setup.js',
-		'lib/core/extend/__extend/setup_hook.js',
+		'lib/core/extend/__extend/setup_form.js',
+		'lib/core/extend/__extend/setup_model.js',
 		'lib/core/extend/__extend/__extend.js',
 		'lib/core/extend/extend.js',
 		'lib/core/extend/mixin.js',
@@ -43,6 +56,7 @@ Package.on_use(function (api, where) {
 		
 		
 		'lib/core/ultimate_class/ultimate_class.js',
+		'lib/core/ultimate_class/behavior.js',
 		'lib/core/ultimate_class/tracker.js',
 		'lib/core/ultimate_class/timer.js',
 		'lib/core/ultimate_class/http.js',
@@ -55,17 +69,44 @@ Package.on_use(function (api, where) {
 	
 	
 	Npm.depends({
-		"remote-exec": "~0.0.3"
+		"remote-exec": "0.0.3"
 	});
 	
 	api.add_files([
 		'lib/utilities/ultimate_exec.js'
-	], 'server']);
+	], ['server']);
+	
+	
+	/** ULTIMATE_REACTIVE **/
+	
+	api.add_files([
+		'lib/ultimate_reactive/ultimate_reactive.js',
+		'lib/ultimate_reactive/autorun_subscribe.js',
+		'lib/ultimate_reactive/get_autorun_subscribe.js',
+	], ['client']);
+	
+	
+	
+	/** FACADES **/
+	
+	api.use([
+		'accounts-base' //for ultimate_accounts.js
+	]);
+		
+	
+	api.use([
+	  'iron:router@1.0.5'
+	], ['client', 'server']);
 	
 	
 	api.add_files([
-		'lib/utilities/ultimate_startup.js',
-		'lib/utilities/ultimate_config.js'
+		'lib/facades/ultimate_facade.js',
+		'lib/facades/ultimate_startup.js',
+		'lib/facades/ultimate_config.js',
+		'lib/facades/ultimate_accounts.js',
+		'lib/facades/ultimate_permissions.js',
+		'lib/facades/ultimate_router.js',
+		'lib/facades/ultimate_publish.js',
 	], ['client', 'server']);
 	
 	
@@ -86,6 +127,8 @@ Package.on_use(function (api, where) {
 
 		'lib/model/ultimate_model.js',
 		'lib/model/additional_methods.js',
+		
+		'lib/model/ultimate_behavior.js',
 		
 		'lib/user/ultimate_user.js',
 
@@ -145,21 +188,21 @@ Package.on_use(function (api, where) {
 	  'lib/ui/wizard/ultimate_wizard.js',
 		'lib/ui/wizard/templates.html',
 	  'lib/ui/wizard/templates.js',
-
+		
 
 		'lib/ui/ultimate_component/ultimate_events/ultimate_events.js',
+		
+		'lib/ui/ultimate_component/ultimate_component_parent.js',
 		'lib/ui/ultimate_component/ultimate_component.js',
+		'lib/ui/ultimate_component/ultimate_component_model.js',
+		
+		'lib/ui/ultimate_component/helper_shortcut.js',
 		'lib/ui/ultimate_component/instance_methods.js',
-		'lib/ui/ultimate_component/instance_data.js',
-		'lib/ui/ultimate_component/autorun_subscribe.js',
-		'lib/ui/ultimate_component/get_set_methods.js',
+		'lib/ui/ultimate_component/instance_data.js',	
 		'lib/ui/ultimate_component/mixins.js',
 		
-		'lib/ui/ultimate_component/helpers/selected.js',
-		'lib/ui/ultimate_component/helpers/render.html',
-		'lib/ui/ultimate_component/helpers/render.js',
+		'lib/ui/ultimate_component/helpers/selected.js'
 
-		
 	], 'client');
 
 	api.export([ 

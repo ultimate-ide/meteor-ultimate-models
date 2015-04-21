@@ -45,6 +45,7 @@ Package.on_use(function (api, where) {
 		'lib/core/extend/mixin.js',
 		'lib/core/extend/utility.js',
 		'lib/core/inheritance/helper.js',
+		'lib/core/inheritance/helper_additional_methods.js',
 		'lib/core/inheritance/extends.js',
 
 		
@@ -130,7 +131,7 @@ Package.on_use(function (api, where) {
 		
 		'lib/model/ultimate_behavior.js',
 		
-		'lib/user/ultimate_user.js',
+		'lib/user/ultimate_user.js'
 
   ], ['client', 'server']);
 

@@ -27,7 +27,6 @@ Package.on_use(function (api, where) {
 	
 	api.add_files([
 		'lib/overrides/string_methods.js',
-		'lib/overrides/array_methods.js',
 		'lib/overrides/underscore_mixin.js',
 		'lib/overrides/meteor_overrides.js',
 		'lib/overrides/quickies.js'

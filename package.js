@@ -36,16 +36,19 @@ Package.on_use(function (api, where) {
 	/** INHERITANCE & ULTIMATECLASS CORE **/
 	
   api.add_files([
-    'lib/core/extend/__extend/setup.js',
-		'lib/core/extend/__extend/setup_form.js',
-		'lib/core/extend/__extend/setup_model.js',
-		'lib/core/extend/__extend/__extend.js',
-		'lib/core/extend/extend.js',
-		'lib/core/extend/mixin.js',
-		'lib/core/extend/utility.js',
-		'lib/core/inheritance/helper.js',
-		'lib/core/inheritance/helper_additional_methods.js',
-		'lib/core/inheritance/extends.js',
+    'lib/core_extend/setup.js',
+		'lib/core_extend/setup_form.js',
+		'lib/core_extend/setup_model.js',
+		'lib/core_extend/__extend.js',
+
+		'lib/core_extend/extend.js',
+		'lib/core_extend/mixin.js',
+		'lib/core_extend/utility.js',
+		
+		'lib/core_inheritance/ultimate.js',
+		'lib/core_inheritance/helper.js',
+		'lib/core_inheritance/helper_additional_methods.js',
+		'lib/core_inheritance/extends.js',
 
 		
 		'lib/core_http/ultimate_http.js',
@@ -55,13 +58,12 @@ Package.on_use(function (api, where) {
 		'lib/core_http/startup.js',
 		
 		
-		'lib/core/ultimate_class/ultimate_class.js',
-		'lib/core/ultimate_class/behavior.js',
-		'lib/core/ultimate_class/tracker.js',
-		'lib/core/ultimate_class/timer.js',
-		'lib/core/ultimate_class/http.js',
-		'lib/core/ultimate_class/sync.js',	
-		
+		'lib/ultimate_class/ultimate_class.js',
+		'lib/ultimate_class/behavior.js',
+		'lib/ultimate_class/tracker.js',
+		'lib/ultimate_class/timer.js',
+		'lib/ultimate_class/http.js',
+		'lib/ultimate_class/sync.js',
   ], ['client', 'server']);
 
   api.export(['Ultimate', 'UltimateClass'], ['client', 'server']);
@@ -107,6 +109,8 @@ Package.on_use(function (api, where) {
 		'lib/facades/ultimate_permissions.js',
 		'lib/facades/ultimate_router.js',
 		'lib/facades/ultimate_publish.js',
+
+    'lib/ultimate_behavior/ultimate_behavior.js', //depends on ultimate_facade too
 	], ['client', 'server']);
 	
 	
@@ -121,16 +125,14 @@ Package.on_use(function (api, where) {
 	]);
 	
 	api.add_files([
-		'lib/form/ultimate_form.js',
-		'lib/form/mongo_attributes.js',
-		'lib/form/reactive_methods.js',
+		'lib/ultimate_form/ultimate_form.js',
+		'lib/ultimate_form/mongo_attributes.js',
+		'lib/ultimate_form/reactive_methods.js',
 
-		'lib/model/ultimate_model.js',
-		'lib/model/additional_methods.js',
+		'lib/ultimate_model/ultimate_model.js',
+		'lib/ultimate_model/additional_methods.js',
 		
-		'lib/model/ultimate_behavior.js',
-		
-		'lib/user/ultimate_user.js'
+		'lib/ultimate_user/ultimate_user.js'
 
   ], ['client', 'server']);
 
@@ -138,24 +140,25 @@ Package.on_use(function (api, where) {
 
 
 	api.add_files([
-		'lib/form/templates.html',
-		'lib/form/templates.js',
+		'lib/ultimate_form/templates.html',
+		'lib/ultimate_form/templates.js',
 	], ['client']);
 		
 		
 		
 		
-	/** ULTIMATE_SYNC **/
+	/** UTILITIES **/
 	
 	api.add_files([
 		'lib/utilities/ultimate_sync.js',
 		'lib/utilities/ultimate_email.js',
+    'lib/utilities/ultimate_exec.js',
+    'lib/utilities/ultimate_remote_exec.js'
 	], ['server']);
 
 	api.export(['UltimateSync'], ['server']);
-	
-	
-	
+
+
 	
 	/** UI TOOLS **/
 	
@@ -169,39 +172,44 @@ Package.on_use(function (api, where) {
 
 
 	api.addFiles([
-		'lib/ui/modal/core/ultimate_modal.js',
-		'lib/ui/modal/core/ultimate_modal_form.js',
-		'lib/ui/modal/popups/ultimate_modal_content.js',
+		'lib/ultimate_modal/ultimate_modal.js',
+		'lib/ultimate_modal/ultimate_modal_form.js',
+		'lib/ultimate_modal/ultimate_modal_content.js',
 		
 		
-		'lib/ui/modal/popups/ultimate_model_prompt.js',
-		'lib/ui/modal/popups/ultimate_schema_prompt.js',
-		'lib/ui/modal/core/ultimate_prompt.js',
+		'lib/ultimate_modal/ultimate_model_prompt.js',
+		'lib/ultimate_modal/ultimate_schema_prompt.js',
+		'lib/ultimate_modal/ultimate_prompt.js',
 		
-		'lib/ui/modal/popups/ultimate_modal_wizard.js',
-		'lib/ui/modal/popups/ultimate_modal_tabbed.js',
+		'lib/ultimate_modal/ultimate_modal_wizard.js',
+		'lib/ultimate_modal/ultimate_modal_tabbed.js',
 		
-	  'lib/ui/modal/templates.html',
-		'lib/ui/modal/templates.js',
+	  'lib/ultimate_modal/templates.html',
+		'lib/ultimate_modal/templates.js',
 
 
-	  'lib/ui/wizard/ultimate_wizard.js',
-		'lib/ui/wizard/templates.html',
-	  'lib/ui/wizard/templates.js',
+	  'lib/ultimate_wizard/ultimate_wizard.js',
+		'lib/ultimate_wizard/templates.html',
+	  'lib/ultimate_wizard/templates.js',
 		
 
-		'lib/ui/ultimate_component/ultimate_events/ultimate_events.js',
+		'lib/ultimate_events/ultimate_events.js',
 		
-		'lib/ui/ultimate_component/ultimate_component_parent.js',
-		'lib/ui/ultimate_component/ultimate_component.js',
-		'lib/ui/ultimate_component/ultimate_component_model.js',
+		'lib/ultimate_component/ultimate_component_parent.js',
+		'lib/ultimate_component/ultimate_component.js',
+		'lib/ultimate_component/ultimate_component_model.js',
 		
-		'lib/ui/ultimate_component/helper_shortcut.js',
-		'lib/ui/ultimate_component/instance_methods.js',
-		'lib/ui/ultimate_component/instance_data.js',	
-		'lib/ui/ultimate_component/mixins.js',
+		'lib/ultimate_component/helper_shortcut.js',
+		'lib/ultimate_component/instance_methods.js',
+		'lib/ultimate_component/instance_data.js',
+		'lib/ultimate_component/mixins.js',
 		
-		'lib/ui/ultimate_component/helpers/selected.js'
+		'lib/ultimate_component/selected_helper.js',
+
+
+    //'lib/ultimate_datatable_component/ultimate_datatable_component.js',
+    //'lib/ultimate_datatable_component/datatable_methods.js',
+    //'lib/ultimate_datatable_component/ultimate_datatable_component.html'
 
 	], 'client');
 

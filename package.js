@@ -36,34 +36,26 @@ Package.on_use(function (api, where) {
 	/** INHERITANCE & ULTIMATECLASS CORE **/
 	
   api.add_files([
-    'lib/core_extend/setup.js',
-		'lib/core_extend/setup_form.js',
-		'lib/core_extend/setup_model.js',
-		'lib/core_extend/__extend.js',
+		'lib/ultimate/ultimate.js',
+		'lib/ultimate/extends.js',
+		'lib/ultimate/setup_methods.js',
+    'lib/ultimate/setup_all.js',
+		'lib/ultimate/setup_form.js',
+		'lib/ultimate/setup_model.js',
 
-		'lib/core_extend/extend.js',
-		'lib/core_extend/mixin.js',
-		'lib/core_extend/utility.js',
-		
-		'lib/core_inheritance/ultimate.js',
-		'lib/core_inheritance/helper.js',
-		'lib/core_inheritance/helper_additional_methods.js',
-		'lib/core_inheritance/extends.js',
-
-		
-		'lib/core_http/ultimate_http.js',
-		'lib/core_http/meteor_method.js',
-		'lib/core_http/stub_obj.js',
-		'lib/core_http/meteor_call.js',
-		'lib/core_http/startup.js',
-		
-		
 		'lib/ultimate_class/ultimate_class.js',
+		'lib/ultimate_class/extend.js',
 		'lib/ultimate_class/behavior.js',
 		'lib/ultimate_class/tracker.js',
 		'lib/ultimate_class/timer.js',
-		'lib/ultimate_class/http.js',
 		'lib/ultimate_class/sync.js',
+		
+		'lib/ultimate_http/ultimate_http.js',
+		'lib/ultimate_http/meteor_method.js',
+		'lib/ultimate_http/stub_obj.js',
+		'lib/ultimate_http/meteor_call.js',
+		'lib/ultimate_http/startup.js',
+		'lib/ultimate_http/extend_ultimate_class.js'
   ], ['client', 'server']);
 
   api.export(['Ultimate', 'UltimateClass'], ['client', 'server']);

@@ -38,8 +38,8 @@ Package.on_use(function (api, where) {
   api.add_files([
 		'lib/ultimate/ultimate.js',
 		'lib/ultimate/extends.js',
-		'lib/ultimate/setup_methods.js',
-    'lib/ultimate/setup_all.js',
+		'lib/ultimate/add_methods.js',
+    'lib/ultimate/setup_misc.js',
 		'lib/ultimate/setup_form.js',
 		'lib/ultimate/setup_model.js',
 

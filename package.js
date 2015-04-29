@@ -18,18 +18,12 @@ Package.on_use(function (api, where) {
 	]);
 
 
-
-	api.add_files([
-		'lib/utilities/ultimate_clone.js'
-	], ['client', 'server']);
-	
 	
 	
 	api.add_files([
 		'lib/overrides/string_methods.js',
 		'lib/overrides/underscore_mixin.js',
 		'lib/overrides/meteor_overrides.js',
-		'lib/overrides/quickies.js'
 	], ['client', 'server']);
 	
 	
@@ -45,11 +39,13 @@ Package.on_use(function (api, where) {
 
 		'lib/ultimate_class/ultimate_class.js',
 		'lib/ultimate_class/extend.js',
+    'lib/ultimate_class/events.js',
 		'lib/ultimate_class/behavior.js',
 		'lib/ultimate_class/tracker.js',
 		'lib/ultimate_class/timer.js',
-		'lib/ultimate_class/sync.js',
-		
+
+    'lib/ultimate_clone/ultimate_clone.js',
+
 		'lib/ultimate_http/ultimate_http.js',
 		'lib/ultimate_http/meteor_method.js',
 		'lib/ultimate_http/stub_obj.js',
@@ -58,7 +54,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_http/extend_ultimate_class.js'
   ], ['client', 'server']);
 
-  api.export(['Ultimate', 'UltimateClass'], ['client', 'server']);
+  api.export(['Ultimate', 'UltimateClass', 'UltimateClone'], ['client', 'server']);
 	
 	
 	
@@ -67,7 +63,7 @@ Package.on_use(function (api, where) {
 	});
 	
 	api.add_files([
-		'lib/utilities/ultimate_exec.js'
+		'lib/ultimate_exec/ultimate_exec.js'
 	], ['server']);
 	
 	
@@ -94,15 +90,17 @@ Package.on_use(function (api, where) {
 	
 	
 	api.add_files([
-		'lib/facades/ultimate_facade.js',
+		'lib/ultimate_facade/ultimate_facade.js',
+
 		'lib/facades/ultimate_startup.js',
 		'lib/facades/ultimate_config.js',
 		'lib/facades/ultimate_accounts.js',
 		'lib/facades/ultimate_permissions.js',
 		'lib/facades/ultimate_router.js',
 		'lib/facades/ultimate_publish.js',
+    'lib/facades/ultimate_email.js',
 
-    'lib/ultimate_behavior/ultimate_behavior.js', //depends on ultimate_facade too
+    'lib/ultimate_behavior/ultimate_behavior.js' //depends on ultimate_facade too
 	], ['client', 'server']);
 	
 	
@@ -142,10 +140,12 @@ Package.on_use(function (api, where) {
 	/** UTILITIES **/
 	
 	api.add_files([
-		'lib/utilities/ultimate_sync.js',
-		'lib/utilities/ultimate_email.js',
-    'lib/utilities/ultimate_exec.js',
-    'lib/utilities/ultimate_remote_exec.js'
+		'lib/ultimate_sync/ultimate_sync.js',
+    'lib/ultimate_sync/extend_ultimate_class.js',
+
+    'lib/ultimate_exec/ultimate_exec.js',
+    'lib/ultimate_exec/ultimate_exec_local.js',
+    'lib/ultimate_exec/ultimate_exec_remote.js'
 	], ['server']);
 
 	api.export(['UltimateSync'], ['server']);

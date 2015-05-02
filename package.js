@@ -9,8 +9,8 @@ Package.on_use(function (api, where) {
   api.versionsFrom('METEOR@1.0');
   api.use([
 		"underscore",
-    'templating',
-    'blaze',
+    	'templating',
+    	'blaze',
 		'http',
 		'aldeed:simple-schema@1.3.0',
 		'aldeed:autoform@4.2.2',
@@ -33,18 +33,18 @@ Package.on_use(function (api, where) {
 		'lib/ultimate/ultimate.js',
 		'lib/ultimate/extends.js',
 		'lib/ultimate/add_methods.js',
-    'lib/ultimate/setup_misc.js',
+    	'lib/ultimate/setup_misc.js',
 		'lib/ultimate/setup_form.js',
 		'lib/ultimate/setup_model.js',
 
 		'lib/ultimate_class/ultimate_class.js',
 		'lib/ultimate_class/extend.js',
-    'lib/ultimate_class/events.js',
+    	'lib/ultimate_class/events.js',
 		'lib/ultimate_class/behavior.js',
 		'lib/ultimate_class/tracker.js',
 		'lib/ultimate_class/timer.js',
 
-    'lib/ultimate_clone/ultimate_clone.js',
+    	'lib/ultimate_clone/ultimate_clone.js',
 
 		'lib/ultimate_http/ultimate_http.js',
 		'lib/ultimate_http/meteor_method.js',

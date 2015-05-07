@@ -59,7 +59,9 @@ Package.on_use(function (api, where) {
 	
 	
 	Npm.depends({
-		"remote-exec": "0.0.3"
+		"remote-exec": "0.0.3",
+		'async': '0.9.0',
+		"ssh2": "0.2.14"
 	});
 	
 	api.add_files([
@@ -155,12 +157,13 @@ Package.on_use(function (api, where) {
 	/** UI TOOLS **/
 	
 	api.use([
-	  'tracker',
-	  'session',
+	  	'tracker',
+	  	'session',
 		'naxio:flash@0.2.2',
 		'percolate:velocityjs@1.2.1_1',
 		'aldeed:template-extension@3.4.3'
 	], 'client');
+
 
 
 	api.addFiles([
@@ -176,13 +179,13 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_modal/ultimate_modal_wizard.js',
 		'lib/ultimate_modal/ultimate_modal_tabbed.js',
 		
-	  'lib/ultimate_modal/templates.html',
+	  	'lib/ultimate_modal/templates.html',
 		'lib/ultimate_modal/templates.js',
 
 
-	  'lib/ultimate_wizard/ultimate_wizard.js',
+	  	'lib/ultimate_wizard/ultimate_wizard.js',
 		'lib/ultimate_wizard/templates.html',
-	  'lib/ultimate_wizard/templates.js',
+	  	'lib/ultimate_wizard/templates.js',
 		
 
 		'lib/ultimate_events/ultimate_events.js',
@@ -196,14 +199,25 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_component/instance_data.js',
 		'lib/ultimate_component/mixins.js',
 		
-		'lib/ultimate_component/selected_helper.js',
-
-
-    //'lib/ultimate_datatable_component/ultimate_datatable_component.js',
-    //'lib/ultimate_datatable_component/datatable_methods.js',
-    //'lib/ultimate_datatable_component/ultimate_datatable_component.html'
+		'lib/ultimate_component/selected_helper.js'
 
 	], 'client');
+
+
+	api.imply([
+		'aldeed:tabular@1.2.0'
+	], ['client', 'server']);
+
+	api.addFiles([
+		'lib/ultimate_datatable_component/ultimate_datatable_component.js',
+		'lib/ultimate_datatable_component/datatable_methods.js',
+	], ['client', 'server']);
+
+	api.addFiles([
+    	'lib/ultimate_datatable_component/ultimate_datatable_component.html'
+	], ['client']);
+
+
 
 	api.export([ 
 		'UltimateModal', 

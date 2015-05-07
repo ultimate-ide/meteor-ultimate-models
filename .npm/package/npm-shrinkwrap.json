@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "async": {
+      "version": "0.9.0"
+    },
     "remote-exec": {
       "version": "0.0.3",
       "dependencies": {
@@ -16,6 +19,17 @@
         },
         "async": {
           "version": "0.2.10"
+        }
+      }
+    },
+    "ssh2": {
+      "version": "0.2.14",
+      "dependencies": {
+        "streamsearch": {
+          "version": "0.1.2"
+        },
+        "asn1": {
+          "version": "0.1.11"
         }
       }
     }

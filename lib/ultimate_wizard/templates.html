@@ -18,10 +18,9 @@
 			
 			{{else}}
 		
-				{{#with innerStepContext ..}}
-					{{> Template.dynamic template=activeStepTemplate}}
-				{{/with}}	
-			
+				
+				{{> Template.dynamic template=activeStepTemplate data=model}}
+
 			{{/if}}
 			
 			{{> Template.dynamic template=backNextTemplate data=this}}
@@ -34,23 +33,6 @@
 
 
 <template name="ultimate_wizard_steps">
-	<ul class="wizard-navigation nav-justified">
-		{{#each wizard.steps}}
-			<li>
-				{{#if wizard.route}}
-					<a class="{{stepClass id}}" href="{{pathFor wizard.route step=id}}">
-						<strong> {{title}} </strong>
-					</a>
-				{{else}}
-					<a class="{{stepClass id}} step-link" href="#">
-						<strong> {{title}} </strong>
-					</a>
-				{{/if}}
-			</li>
-		{{/each}}
-	</ul>
-	
-	
 	<ul class="wizard-navigation nav-justified nav nav-pills">
 		{{#each wizard.steps}}
 			<li class="{{stepClass}}">

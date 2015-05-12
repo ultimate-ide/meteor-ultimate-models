@@ -126,7 +126,7 @@ Package.on_use(function (api, where) {
 		
 		'lib/ultimate_user/ultimate_user.js'
 
-  ], ['client', 'server']);
+  	], ['client', 'server']);
 
 	api.export(['UltimateForm', 'UltimateModel', 'UltimateUser'], ['client', 'server']);
 
@@ -138,6 +138,17 @@ Package.on_use(function (api, where) {
 		
 		
 		
+	/** MODEL PUB SUB **/
+
+	api.add_files([
+		'lib/ultimate_pubsub/ultimate_pubsub.js',
+
+  	], ['client', 'server']);
+
+
+
+
+
 		
 	/** UTILITIES **/
 	

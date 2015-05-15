@@ -123,12 +123,10 @@ Package.on_use(function (api, where) {
 
 		'lib/ultimate_model/ultimate_model.js',
 		'lib/ultimate_model/additional_methods.js',
-		
-		'lib/ultimate_user/ultimate_user.js'
 
   	], ['client', 'server']);
 
-	api.export(['UltimateForm', 'UltimateModel', 'UltimateUser'], ['client', 'server']);
+	api.export(['UltimateForm', 'UltimateModel'], ['client', 'server']);
 
 
 	api.add_files([
@@ -148,6 +146,12 @@ Package.on_use(function (api, where) {
 
 
 
+
+	api.add_files([
+		'lib/ultimate_user/ultimate_user.js'
+
+  	], ['client', 'server']);
+  	api.export(['UltimateUser'], ['client', 'server']);
 
 		
 	/** UTILITIES **/

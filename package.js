@@ -139,7 +139,31 @@ Package.on_use(function (api, where) {
 	/** MODEL PUB SUB **/
 
 	api.add_files([
-		'lib/ultimate_pubsub/ultimate_pubsub.js',
+		/** ULTIMATE SUBSCRIPTION **/
+		'lib/ultimate_subscription/ultimate_subscription_behavior.js',
+		'lib/ultimate_subscription/extend_ultimate_model.js',
+
+
+		/** ULTIMATE RELATION **/
+		'lib/ultimate_relation/ultimate_relation_behavior.js',
+		'lib/ultimate_relation/extend_ultimate_model.js',
+
+
+
+		'lib/ultimate_relation/relations_publisher_factory.js',
+
+		'lib/ultimate_relation/relations_publisher.js',
+
+		'lib/ultimate_relation/parent_publisher.js',
+
+		'lib/ultimate_relation/has_belongs_publisher.js',
+		'lib/ultimate_relation/has_many_publisher.js',
+
+
+
+		/** ULTIMATE AGGREGATE **/
+		'lib/ultimate_aggregate/ultimate_aggregate_behavior.js',
+		'lib/ultimate_aggregate/extend_ultimate_model.js',
 
   	], ['client', 'server']);
 
@@ -158,11 +182,11 @@ Package.on_use(function (api, where) {
 	
 	api.add_files([
 		'lib/ultimate_sync/ultimate_sync.js',
-    'lib/ultimate_sync/extend_ultimate_class.js',
+    	'lib/ultimate_sync/extend_ultimate_class.js',
 
-    'lib/ultimate_exec/ultimate_exec.js',
-    'lib/ultimate_exec/ultimate_exec_local.js',
-    'lib/ultimate_exec/ultimate_exec_remote.js'
+    	'lib/ultimate_exec/ultimate_exec.js',
+    	'lib/ultimate_exec/ultimate_exec_local.js',
+    	'lib/ultimate_exec/ultimate_exec_remote.js'
 	], ['server']);
 
 	api.export(['UltimateSync'], ['server']);

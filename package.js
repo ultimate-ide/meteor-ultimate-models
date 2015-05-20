@@ -39,8 +39,8 @@ Package.on_use(function (api, where) {
 
 		'lib/ultimate_class/ultimate_class.js',
 		'lib/ultimate_class/extend.js',
-    	'lib/ultimate_class/events.js',
 		'lib/ultimate_class/behavior.js',
+    	'lib/ultimate_class/events.js',
 		'lib/ultimate_class/tracker.js',
 		'lib/ultimate_class/timer.js',
 
@@ -158,6 +158,9 @@ Package.on_use(function (api, where) {
 
 		'lib/ultimate_relation/has_belongs_publisher.js',
 		'lib/ultimate_relation/has_many_publisher.js',
+		'lib/ultimate_relation/belongs_to_publisher.js',
+		'lib/ultimate_relation/through_publisher.js',
+		'lib/ultimate_relation/many_many_publisher.js',
 
 
 

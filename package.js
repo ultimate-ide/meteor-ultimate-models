@@ -37,6 +37,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate/setup_form.js',
 		'lib/ultimate/setup_model.js',
 
+
 		'lib/ultimate_class/ultimate_class.js',
 		'lib/ultimate_class/extend.js',
 		'lib/ultimate_class/behavior.js',
@@ -45,6 +46,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_class/timer.js',
 
     	'lib/ultimate_clone/ultimate_clone.js',
+    	'lib/ultimate_utilities/ultimate_utilities.js',
 
 		'lib/ultimate_http/ultimate_http.js',
 		'lib/ultimate_http/meteor_method.js',
@@ -167,17 +169,17 @@ Package.on_use(function (api, where) {
 		/** ULTIMATE AGGREGATE **/
 		'lib/ultimate_aggregate/ultimate_aggregate_behavior.js',
 		'lib/ultimate_aggregate/extend_ultimate_model.js',
-		//'lib/ultimate_aggregate/ultimate_aggregate.js',
+		'lib/ultimate_aggregate/ultimate_aggregate.js',
 
 
 		'lib/ultimate_aggregate/create_methods_helper.js',
 		'lib/ultimate_aggregate/create_class_methods_helper.js',
-		//'lib/ultimate_aggregate/create_instance_methods_helper.js',
-		//'lib/ultimate_aggregate/create_groupby_methods_helper.js',
+		'lib/ultimate_aggregate/create_instance_methods_helper.js',
+		'lib/ultimate_aggregate/create_groupby_methods_helper.js',
 
 		'lib/ultimate_aggregate/aggregate_publisher.js',
 		'lib/ultimate_aggregate/aggregate_collection_publisher.js',
-		//'lib/ultimate_aggregate/aggregate_relations_publisher.js',
+		'lib/ultimate_aggregate/aggregate_relations_publisher.js',
 
   	], ['client', 'server']);
 

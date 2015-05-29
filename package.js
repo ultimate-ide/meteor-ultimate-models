@@ -180,6 +180,7 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_aggregate/aggregate_publisher.js',
 		'lib/ultimate_aggregate/aggregate_collection_publisher.js',
 		'lib/ultimate_aggregate/aggregate_relations_publisher.js',
+		'lib/ultimate_aggregate/aggregate_relations_standalone_publisher.js',
 
   	], ['client', 'server']);
 

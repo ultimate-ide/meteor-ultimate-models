@@ -145,6 +145,9 @@ Package.on_use(function (api, where) {
 		'lib/ultimate_subscription/ultimate_subscription_behavior.js',
 		'lib/ultimate_subscription/extend_ultimate_model.js',
 
+		'lib/ultimate_subscription/subscription_cache.js',
+		'lib/ultimate_subscription/client_publisher_duck.js',
+
 
 		/** ULTIMATE RELATION **/
 		'lib/ultimate_relation/ultimate_relation_behavior.js',

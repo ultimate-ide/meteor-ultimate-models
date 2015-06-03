@@ -264,7 +264,7 @@ Package.on_use(function (api, where) {
 
 
 	api.imply([
-		'aldeed:tabular@1.2.0'
+		'ultimateide:tabular@1.2.0'
 	], ['client', 'server']);
 
 	api.addFiles([
